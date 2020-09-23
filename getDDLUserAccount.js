@@ -48,10 +48,10 @@ for (var i = 0; i < listDBs.databases.length; i++) {
 		  cmd = "db.createUser(" + c1 + " user:" + a + listUsers[j].user + a + ",pwd: " + a + listPasswd[j] + a + ", roles:[";
 		  roleCmd = "";
 		  for (var z = 0; z < listUsers[j].roles.length; z++) {
-		     if (z > 0 && z < listUsers[j].roles.length-1) {
+		     if (z > 0 && z <= listUsers[j].roles.length-1) {
 		       roleCmd = roleCmd + ", ";
 		     }
-		     roleCmd = roleCmd + c1 + " role: " + a + listUsers[j].roles[z].role + a + ", db: " + a + listUsers[j].roles[z].db + a + c2;
+		  roleCmd = roleCmd + c1 + " role: " + a + listUsers[j].roles[z].role + a + ", db: " + a + listUsers[j].roles[z].db + a + " " + c2;
 		  }
 		  cmd = cmd + roleCmd + "]" + c2 + ");";
 		  print(cmd);
